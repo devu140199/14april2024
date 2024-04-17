@@ -63,11 +63,17 @@
         var headertop = createMyELement('div');
         var headertopinner = createMyELement('div');
         var headerbottominner = createMyELement('div');
+        var main = createMyELement('div');
+        var footer = document.createElement('footer');
+
 
         headertop = myObject(headertop,{'class':'d_headtop'});
         headertopinner = myObject(headertopinner,{'class':'container'});
         headerbottominner = myObject(headerbottominner,{'class':'container'});
-
+        main = myObject(main,{'class':'d_main'});
+        footer.setAttribute('class','d_footer');
+        // console.log(footer);
+        
         
         headertop.appendChild(headertopinner);
         var headerbottom = createMyELement('div');
@@ -81,24 +87,40 @@
         bodyToHead(h);
         h.appendChild(headertop);
         h.appendChild(headerbottom);
+        h.appendChild(main);
+        document.body.appendChild(footer);
 
         //document.querySelector('.d_header').style.height = '169px';
         //document.querySelector('.d_header').style.border = '1px dashed #333';
-        
-        document.querySelector('.d_headtop').style.height = '58px';
-        document.querySelector('.d_headtop').style.border = '1px dashed red';
-        document.querySelector('.d_headtop').style.backgroundColor = 'red';
+        var d_headtop_var = document.querySelector('.d_headtop');
+        d_headtop_var.style.height = '58px';
+        d_headtop_var.style.border = '1px dashed red';
+        d_headtop_var.style.backgroundColor = 'red';
 
-        document.querySelector('.d_headerbottom').style.height = '111px';
-        document.querySelector('.d_headerbottom').style.border = '1px dashed green';
-        document.querySelector('.d_headerbottom').style.backgroundColor = 'green';
+        var d_headerbottom_var = document.querySelector('.d_headerbottom');
+        d_headerbottom_var.style.height = '111px';
+        d_headerbottom_var.style.border = '1px dashed green';
+        d_headerbottom_var.style.backgroundColor = 'green';
+
+        var d_header_container_var = document.querySelector('.d_headtop > .container');
+        d_header_container_var.style.height = '100%';
+        d_header_container_var.style.border = '1px solid blue';
+
+        var d_headerbottom_container_var = document.querySelector('.d_headerbottom > .container');
+        d_headerbottom_container_var.style.height = '100%';
+        d_headerbottom_container_var.style.border = '1px solid black';
+
+        var d_main_var = document.querySelector('.d_main');
+        d_main_var.style.height = '12500px';
+        d_main_var.style.border = '1px dashed #333';
+        d_main_var.style.backgroundColor = 'orange';
+
+        var d_footer_var = document.querySelector('.d_footer');
+        d_footer_var.style.height = '450px';
+        d_footer_var.style.border = '1px dashed #333';
+        d_footer_var.style.backgroundColor = 'pink';
 
 
-        document.querySelector('.d_headtop > .container').style.height = '100%';
-        document.querySelector('.d_headtop > .container').style.border = '1px solid blue';
-
-        document.querySelector('.d_headerbottom > .container').style.height = '100%';
-        document.querySelector('.d_headerbottom > .container').style.border = '1px solid black';
     </script>
 </body>
 </html>
