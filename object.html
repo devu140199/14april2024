@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    
+
+    <script>
+        var myStu = {
+            student : [{name:'kartik'},{name:'sharma'},{name:'happy'}]  //array of object
+        }
+
+        //create a object
+        var myNameObject = {
+            "fname" : 'devender',   //property : propertyvalue
+            'lname' : 'sharma',     //property : propertyvalue
+            department : 'ppc',     //property : propertyvalue
+            myFunction : function(){    //anonymous function
+                // console.log(this.fname);
+                return this.fname +" "+ this.lname;
+            },
+            myStudent : function(){     //anonymous function
+                return `my name is ` + this.fname +" "+ this.lname + ` and my department is ` + this.department + ".";
+            },
+            mySchool : function(){      //anonymous function
+                return myStu;
+            }
+        }
+        let x = myNameObject.myFunction();
+        // console.log(x.toUpperCase());
+        // console.log(x.at(2));
+
+        let y = myNameObject.myStudent();
+        console.log(y.toUpperCase());
+
+        let z = myNameObject.mySchool().student;
+        z.forEach((element,index,arr) => {
+            if(index == 0)
+            console.log(z[index].name);
+        });
+
+
+
+
+        // console.log(z);
+
+
+
+
+
+        // console.log(myNameObject.myFunction);
+   /*      // myNameObject.myFunction();
+        // console.log('x');
+        // let x = myNameObject.myStudent();
+        // console.log(x);
+        let x = myNameObject.mySchool().student;
+        // console.log(typeof x);
+        // x.forEach((currentValue,index,arr) =>{
+        //     console.log(currentValue.name);
+        // })
+        delete myNameObject.lname;
+        x.forEach(myFunction);
+
+        function myFunction(currentValue,index,arr){
+            console.log(currentValue);
+        }
+        console.log(myNameObject);
+ */
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsertBefore...</title>
+</head>
+<body>
+    <h1>List of Array Object</h1>
+    <ul id="d_ul">
+        <li>class1</li>
+        <li>class2</li>
+        <li>class3</li>
+    </ul>
+    <button onclick="clickMyInsert()">click</button>
+
+    <script>
+        
+        
+        var u = document.getElementById('d_ul');
+        var student = " ";
+        function clickMyInsert(){
+            var v1 = document.createElement('li');
+            let value = prompt('enter your object');
+            //find the already array is available in arry or not
+            var stu = false;
+            stu = student.find(function(currentValue,index,arr){
+                return (currentValue === v1)?ture:false;
+            });
+
+            if(stu){
+                // true
+            }   else{
+                student.push(v1);
+                //false
+                v1.innerHTML = value;
+            // var ll = document.createTextNode(value);
+            // v1.append(ll);
+            // console.log(v1);
+            u.insertBefore(v1,u.childNodes[0]);
+            // u.insertBefore(v1,document.querySelector('#d_ul > li:first-Child') );
+            // u.appendChild(v1);
+            }
+            
+        }
+
+        console.log(u.childNodes[0]);
+    </script>
+</body>
+</html>

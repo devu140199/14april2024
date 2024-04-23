@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert before</title>
+</head>
+<body>
+    <h1>list of name</h1>
+    <ul id="d_ul">
+        <li>Deepak</li>
+        <li>krishna</li>
+        <li>mahi</li>
+    </ul>
+    <button onclick="addNewName()">add new friend</button>
+
+    <script>
+        var u = document.querySelector('#d_ul');
+        // console.log(u);
+        //function defination
+        var students = [];
+        function addNewName(){  
+            //  function body
+            var n = prompt('Enter Your Name');
+            var stuName = false;
+            stuName = students.find(function(currentValue,index,arr){
+                return (currentValue === n)?true : false;
+            });
+            if(stuName){
+                //true
+                alert('name is existing');
+            }   else {
+                //false
+                students.push(n);
+                var d_li = document.createElement('li');
+                d_li.innerHTML = n;
+                // console.log(d_li);
+                u.insertBefore(d_li,u.childNodes[0]);
+            }
+            
+        }
+
+        
+    </script>
+</body>
+</html>
