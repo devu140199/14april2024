@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document validation...</title>
+</head>
+<body>
+    <div>
+        <input id="checkNumber" type="number" min="100" max="200" required>
+        <button onclick="clickToCheck()">ok</button>
+    </div>
+    <p>Please enter your number between 100 to 300, else given error</p>
+
+    <p id="demo"></p>
+    <script>
+        var number = document.querySelector('#checkNumber');
+        var le = 'please enter less than and equal to 200';
+        var gr = 'please enter greater than and equal to 100';
+
+        //function defination
+        function clickToCheck(){
+            if(!number.checkValidity()){
+                if(number>=100){
+                    document.querySelector('#demo').innerHTML = le;
+                } else{
+                    document.querySelector('#demo').innerHTML = gr;
+                }
+            }   else{
+                document.querySelector('#demo').innerHTML = 'ok';
+            }
+        }
+    </script>
+</body>
+</html>

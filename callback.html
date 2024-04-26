@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback function...🫠🫠🫠</title>
+</head>
+<body>
+    <p id="d_cbfn"></p>
+
+    <script>
+        var x = document.getElementById('d_cbfn');
+        //function defination
+        function myFunction(name,cbfn){  //formal argument / formal parameter //prototype declear
+            //function body
+            // console.log(name);
+            // x.innerHTML = name;
+            // x.style.color = 'red';
+            // x.style.fontWeight = 'bold';
+            // return name;
+            cbfn('devender');
+            return name;
+        
+        }
+        //function calling
+        var value2 = myFunction('Amit',function(val){ //with actual argument //actual parameter
+            //  console.log(typeof val);
+             x.innerHTML = val.toUpperCase();
+
+            // console.log('hello');
+        });
+        console.log(value2);
+        
+    </script>
+</body>
+</html>

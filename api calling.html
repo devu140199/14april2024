@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Calling server to client...</title>
+</head>
+<body>
+    <p id="d_data"></p>
+
+    <script>
+        var value = document.getElementById('d_data');
+        //create new class
+        class NewClass{
+            //property
+
+            //constructor
+
+            //methods
+            getNewObject(name){
+                // console.log('hello my ane is devender');
+                return 'Hello, My name is ' + name;
+            }
+        }
+
+        //create new object from class NewClass
+        //syntax
+        //let val = new NewClass();
+        var val = new NewClass();
+        var v = val.getNewObject('Devender sharma');
+        // console.log(v);
+        value.innerHTML = v.toUpperCase();
+
+        //let create object for api calling
+        
+        //function defination
+        function getMyPhotos(url,adr){
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('GET',url);
+
+            xhr.send();
+
+            xhr.onload = function(response){
+                console.log(xhr.responseText);
+                adr(response);
+        }
+
+
+
+        }
+        getMyPhotos("https://jsonplaceholder.typicode.com/photos",function(response){
+            console.log(response)
+        })
+
+
+
+    </script>
+</body>
+</html>
